@@ -1,0 +1,26 @@
+<inventory>
+    <book year="2018">
+        <title>mybatis</title>
+        <author>qiuzhangwei</author>
+        <publisher>guanghzou</publisher>
+        <price>12.25</price>
+    </book>
+    <book year="1018">
+        <title>lishi</title>
+        <author>wuhuan</author>
+        <publisher>chengdu</publisher>
+        <price>12.25555</price>
+    </book>
+    <picture>
+        <name>漫画</name>
+        <author>
+            <name>  马超  </name>
+        </author>
+    </picture>
+    <picture>
+        <name>  一笔画</name>
+        <author>
+            <name>  马良</name>
+        </author>
+    </picture>
+</inventory>

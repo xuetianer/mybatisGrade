@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.demo.mapper.UserMapper">
+
+    <cache>
+        <property name="cacheFile" value="E:\study\mybatis_demo\my-custom-cache.tmp"/>
+    </cache>
+
+    <resultMap id="UserResult" type="User" >
+        <id  property="id"  column="id"/>
+        <result property="name" column="name" />
+        <result property="age"  column="age"/>
+        <result property="birthday" column="birthday"/>
+    </resultMap>
+
+
+    <insert id="insert" parameterType="User">
+        INSERT INTO user(name,age,birthday)
+        VALUES
+        (#{name},#{age},#{birthday})
+    </insert>
+
+    <select id="selectById" resultMap="UserResult">
+        SELECT * FROM user WHERE id=#{id}
+    </select>
+    <select id="list" resultMap="UserResult">
+        SELECT * FROM user
+    </select>
+
+    <select id="testProceDure" statementType="CALLABLE" resultMap="UserResult">
+            call selectUserById(#{id})
+    </select>
+
+</mapper>

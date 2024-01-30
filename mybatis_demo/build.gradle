@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.13'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+java {
+    sourceCompatibility = '11'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    maven { name "Alibaba" ; url "https://maven.aliyun.com/repository/public" }
+    maven { name "Bstek" ; url "https://nexus.bsdn.org/content/groups/public/" }
+    mavenCentral()
+}
+
+dependencies {
+//    implementation group:'com.alibaba', name: 'druid', version: '1.2.8'
+    implementation 'mysql:mysql-connector-java:8.0.29'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.7.14'
+    implementation 'com.github.pagehelper:pagehelper:5.2.0'
+//    implementation 'org.springframework.boot:spring-boot-starter:2.7.14'
+//    implementation group: 'org.mybatis', name: 'mybatis', version: '3.5.13'
+    implementation 'org.projectlombok:lombok:1.18.22'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.1'
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation 'junit:junit:4.13.2'
+}
+
+test {
+    useJUnitPlatform()
+}
